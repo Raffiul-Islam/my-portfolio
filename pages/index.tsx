@@ -1,3 +1,4 @@
+import profile from "../data/profile.json";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,23 +12,7 @@ const selectedProjects = selectedProjectSlugs
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is (typeof projects)[number] => Boolean(project));
 
-const deliveryStrengths = [
-  {
-    title: "Enterprise frontend engineering",
-    description:
-      "Angular micro frontends, reusable components, complex forms, role-aware navigation, and responsive dashboards.",
-  },
-  {
-    title: "Backend services & security",
-    description:
-      "Spring Boot REST APIs, JWT authentication, authorization, JPA, Hibernate, and maintainable domain services.",
-  },
-  {
-    title: "Data & platform integration",
-    description:
-      "MSSQL, PostgreSQL, Redis, RabbitMQ, MinIO, Elasticsearch, Apache Tomcat, and Azure workflows.",
-  },
-];
+const deliveryStrengths = profile.deliveryStrengths;
 
 export default function Home() {
   return (
@@ -49,7 +34,7 @@ export default function Home() {
           <div className="order-2 text-center lg:order-1 lg:text-left">
             <div className="inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-cyan-100 bg-cyan-50 px-4 py-2 text-center text-[10px] font-bold uppercase leading-relaxed tracking-[0.16em] text-cyan-700 shadow-sm shadow-cyan-100/60 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-300 dark:shadow-cyan-500/10 sm:tracking-[0.25em]">
               <span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-500 dark:bg-emerald-400" />
-              Software Engineer at Karooth IT (BD) Limited
+              {profile.role} at {profile.company}
             </div>
 
             <h1 className="mt-7 text-center text-4xl font-black leading-[1.05] tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-left lg:text-7xl">
@@ -57,9 +42,7 @@ export default function Home() {
               <span className="gradient-text">complex operations</span>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-center text-lg leading-relaxed text-slate-600 dark:text-slate-400 sm:text-xl lg:mx-0 lg:text-left">
-              I build scalable Angular interfaces and Spring Boot services for social protection,
-              education, training, and institutional management systems—with security,
-              maintainability, and real operational workflows at the center.
+              {profile.summary}
             </p>
 
             <div className="mt-9 flex flex-wrap justify-center gap-4 lg:justify-start">
@@ -100,7 +83,7 @@ export default function Home() {
                 </div>
               </div>
               <h2 className="mt-6 text-3xl font-black text-slate-900 dark:text-white">
-                Md Raffiul Islam
+                {profile.name}
               </h2>
               <p className="mt-2 text-sm font-semibold text-cyan-700 dark:text-cyan-300">
                 Software Engineer &middot; Full-stack Enterprise Systems
@@ -189,10 +172,7 @@ export default function Home() {
             </h2>
             <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
               <p className="text-center lg:text-left">
-                I&apos;m a Computer Science &amp; Engineering graduate from the University of Dhaka
-                and a Software Engineer at Karooth IT (BD) Limited. I contribute across Angular
-                micro frontends, Spring Boot services, databases, messaging, security, and
-                enterprise integrations.
+                {profile.about}
               </p>
               <p className="text-center lg:text-left">
                 I use AI-assisted development workflows to accelerate research, implementation,

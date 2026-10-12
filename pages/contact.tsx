@@ -1,3 +1,4 @@
+import profile from "../data/profile.json";
 import Head from "next/head";
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
@@ -28,20 +29,10 @@ declare global {
 
 type ContactIconName = "email" | "linkedin" | "github" | "whatsapp";
 
-const contacts: Array<{
-  title: string;
-  value: string;
-  href: string;
-  icon: ContactIconName;
-  external?: boolean;
-}> = [
-  { title: "Email", value: "rafiulislam1020@gmail.com", href: "mailto:rafiulislam1020@gmail.com", icon: "email" },
-  { title: "LinkedIn", value: "Connect professionally", href: "https://www.linkedin.com/in/rafiul-islam-828b29322/", icon: "linkedin", external: true },
-  { title: "GitHub", value: "Rafiul-KIT", href: "https://github.com/Rafiul-KIT", icon: "github", external: true },
-  { title: "WhatsApp", value: "+880 1719-007226", href: "https://wa.me/8801719007226", icon: "whatsapp", external: true },
-];
+import contactsData from "../data/contacts.json";
+const contacts = contactsData as Array<{ title: string; value: string; href: string; icon: ContactIconName; external?: boolean }>;
 
-const CONTACT_EMAIL = "rafiulislam1020@gmail.com";
+const CONTACT_EMAIL = contacts.find((contact) => contact.icon === "email")!.value;
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 const REASON_OPTIONS = [
   "Professional opportunity",
@@ -382,7 +373,7 @@ export default function Contact() {
             <dl className="mt-7 grid grid-cols-2 gap-3 border-t border-slate-200 pt-6 text-center dark:border-white/10">
               <div className="rounded-2xl bg-slate-50 p-4 dark:bg-white/5">
                 <dt className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Location</dt>
-                <dd className="mt-2 text-sm font-black text-slate-900 dark:text-white">Dhaka, Bangladesh</dd>
+                <dd className="mt-2 text-sm font-black text-slate-900 dark:text-white">{profile.location}</dd>
               </div>
               <div className="rounded-2xl bg-slate-50 p-4 dark:bg-white/5">
                 <dt className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Response</dt>

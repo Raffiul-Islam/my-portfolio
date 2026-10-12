@@ -19,6 +19,10 @@
 
 # production
 /build
+/.resume-backups/
+/.tools/
+/.resume-build/
+/public/*.generating.pdf
 
 # misc
 .DS_Store

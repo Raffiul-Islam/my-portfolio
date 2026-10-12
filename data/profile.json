@@ -1,0 +1,23 @@
+{
+  "name": "Md Raffiul Islam",
+  "role": "Software Engineer",
+  "company": "Karooth IT (BD) Limited",
+  "location": "Dhaka, Bangladesh",
+  "employmentPeriod": "August 2024 – Present",
+  "summary": "I build scalable Angular interfaces and Spring Boot services for social protection, education, training, and institutional management systems—with security, maintainability, and real operational workflows at the center.",
+  "about": "I'm a Computer Science & Engineering graduate from the University of Dhaka and a Software Engineer at Karooth IT (BD) Limited. I contribute across Angular micro frontends, Spring Boot services, databases, messaging, security, and enterprise integrations.",
+  "deliveryStrengths": [
+    {
+      "title": "Enterprise frontend engineering",
+      "description": "Angular micro frontends, reusable components, complex forms, role-aware navigation, and responsive dashboards."
+    },
+    {
+      "title": "Backend services & security",
+      "description": "Spring Boot REST APIs, JWT authentication, authorization, JPA, Hibernate, and maintainable domain services."
+    },
+    {
+      "title": "Data & platform integration",
+      "description": "MSSQL, PostgreSQL, Redis, RabbitMQ, MinIO, Elasticsearch, Apache Tomcat, and Azure workflows."
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
+import { useState } from "react";
+import type { ResumeVariant } from "../data/resume-variants";
 import ResumeDownloadButton from "../components/ResumeDownloadButton";
 import ResumeLoadingState from "../components/ResumeLoadingState";
 
@@ -9,6 +11,7 @@ const ResumePdfViewer = dynamic(() => import("../components/ResumePdfViewer"), {
 });
 
 export default function Resume() {
+  const [variant, setVariant] = useState<ResumeVariant>("corporate");
   return (
     <>
       <Head>
@@ -21,10 +24,10 @@ export default function Resume() {
 
       <main id="main-content" tabIndex={-1} className="mx-auto max-w-6xl px-4 pb-12 pt-24 sm:px-6">
         <div className="mb-4 flex justify-end">
-          <ResumeDownloadButton />
+          <ResumeDownloadButton onVariantChange={setVariant} />
         </div>
 
-        <ResumePdfViewer />
+        <ResumePdfViewer key={variant} variant={variant} />
       </main>
     </>
   );

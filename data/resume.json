@@ -1,0 +1,16 @@
+{
+  "experienceHighlights": [
+    { "project": "SNSOP", "label": "SNSOP Frontend Portals", "highlightIndexes": [0, 1] },
+    { "project": "SNSOP", "label": "SNSOP MIS Backend", "highlightIndexes": [2] },
+    { "project": "MIMS", "label": "MIMS Frontend", "highlightIndexes": [0, 1, 2] }
+  ],
+  "education": [
+    { "institution": "University of Dhaka", "qualification": "BSc (Engg.) in Computer Science and Engineering, CGPA 2.87", "period": "2019 – 2024" },
+    { "institution": "Bangladesh Noubahini School And College, Khulna", "qualification": "HSC, GPA 5.00", "period": "2016 – 2018" },
+    { "institution": "Bangladesh Noubahini School And College, Khulna", "qualification": "SSC, GPA 5.00", "period": "2014 – 2016" }
+  ],
+  "references": [
+    { "name": "Md. Fahim Arefin", "role": "Lecturer, CSE, University of Dhaka", "phone": "01521430883", "email": "fahim@cse.du.ac.bd" },
+    { "name": "Fahim Shihab Shan", "role": "Software Engineer, Ecorys", "phone": "01517112079", "email": "Fsshan14@gmail.com" }
+  ]
+}

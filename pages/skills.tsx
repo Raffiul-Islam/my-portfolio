@@ -2,73 +2,8 @@ import Head from "next/head";
 import SkillBadge from "../components/SkillBadge";
 import Reveal from "../components/Reveal";
 
-const skillCategories = [
-  {
-    title: "Frontend Development",
-    skills: [
-      "Angular",
-      "TypeScript",
-      "JavaScript",
-      "HTML5",
-      "SCSS",
-      "PrimeNG",
-      "Bootstrap",
-      "Responsive Web Design",
-      "Component-Based Architecture",
-      "Reusable UI Components",
-      "Reactive Forms",
-      "Angular Routing",
-      "REST API Integration",
-      "Frontend Performance Optimization",
-    ],
-  },
-  {
-    title: "Backend & APIs",
-    skills: [
-      "Java",
-      "Spring Boot",
-      "RESTful API Development",
-      "Spring Security",
-      "JWT Authentication",
-      "JPA",
-      "Hibernate",
-      "OpenAPI / Swagger",
-      "Backend Service Development",
-      "Secure API Design",
-    ],
-  },
-  {
-    title: "Programming Languages",
-    skills: ["Java", "TypeScript", "JavaScript", "C", "C++", "C#", "ASP.NET"],
-  },
-  {
-    title: "Databases & Storage",
-    skills: ["MSSQL Server", "PostgreSQL", "Redis", "MinIO", "Database Design"],
-  },
-  {
-    title: "Tools & Messaging",
-    skills: [
-      "Git",
-      "GitHub",
-      "Postman",
-      "RabbitMQ",
-      "Elasticsearch",
-    ],
-  },
-  {
-    title: "DevOps & AI Tooling",
-    skills: [
-      "CI/CD Knowledge",
-      "Apache Tomcat",
-      "Microsoft Azure",
-      "Claude",
-      "Gemini",
-      "ChatGPT",
-      "OpenCode",
-      "AI-Assisted CLI Workflows",
-    ],
-  },
-];
+import skillCategoriesData from "../data/skills.json";
+const skillCategories = skillCategoriesData;
 
 export default function Skills() {
   return (

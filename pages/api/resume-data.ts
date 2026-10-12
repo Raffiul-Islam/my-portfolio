@@ -16,8 +16,17 @@ export default async function handler(
     return;
   }
 
+  const variant = request.query.variant ?? "corporate";
+  if (variant !== "corporate" && variant !== "software-farm") {
+    response.status(400).json({ error: "Invalid resume variant." });
+    return;
+  }
+
   try {
-    const filePath = path.join(process.cwd(), "public", "Resume_Raffiul_Islam.pdf");
+    const filename = variant === "corporate"
+      ? "Resume_Raffiul_Islam_With_Photo.pdf"
+      : "Resume_Raffiul_Islam_Without_Photo.pdf";
+    const filePath = path.join(process.cwd(), "public", filename);
     const file = await readFile(filePath);
 
     response.setHeader("Cache-Control", "no-store");

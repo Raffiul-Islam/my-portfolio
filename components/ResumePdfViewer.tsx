@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import ResumeLoadingState from "./ResumeLoadingState";
+import type { ResumeVariant } from "../data/resume-variants";
 
 pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
 
@@ -8,7 +9,7 @@ type PdfLoadResult = {
   numPages: number;
 };
 
-export default function ResumePdfViewer() {
+export default function ResumePdfViewer({ variant }: { variant: ResumeVariant }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [numPages, setNumPages] = useState(0);
@@ -32,7 +33,7 @@ export default function ResumePdfViewer() {
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch("/api/resume-data", { signal: controller.signal })
+    fetch(`/api/resume-data?variant=${variant}`, { signal: controller.signal })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Unable to fetch the resume (status ${response.status}).`);
@@ -48,7 +49,7 @@ export default function ResumePdfViewer() {
       });
 
     return () => controller.abort();
-  }, []);
+  }, [variant]);
 
   function handleLoadSuccess({ numPages: loadedPages }: PdfLoadResult) {
     setNumPages(loadedPages);

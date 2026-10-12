@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Email",
+    "value": "rafiulislam1020@gmail.com",
+    "href": "mailto:rafiulislam1020@gmail.com",
+    "icon": "email"
+  },
+  {
+    "title": "LinkedIn",
+    "value": "Connect professionally",
+    "href": "https://www.linkedin.com/in/rafiul-islam-828b29322/",
+    "icon": "linkedin",
+    "external": true
+  },
+  {
+    "title": "GitHub",
+    "value": "Raffiul-Islam",
+    "href": "https://github.com/Raffiul-Islam",
+    "icon": "github",
+    "external": true
+  },
+  {
+    "title": "WhatsApp",
+    "value": "+880 1719-007226",
+    "href": "https://wa.me/8801719007226",
+    "icon": "whatsapp",
+    "external": true
+  }
+]
